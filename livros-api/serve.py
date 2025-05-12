@@ -1,9 +1,7 @@
 livros = [
-
-{"id": 1, "title": "O Senhor dos Anéis", "autor": "J.R.R. Tolkien"},
-{"id": 2, "titulo": "1984", "autor": "George Orwell"},
-{"id": 3, "titulo": "Dom Casmurro", "autor": "Machado de Assis"}
-
+    {"id": 1, "title": "O Senhor dos Anéis", "author": "J.R.R. Tolkien"},
+    {"id": 2, "title": "1984", "author": "George Orwell"},
+    {"id": 3, "title": "Dom Casmurro", "author": "Machado de Assis"}
 ]
 
 from http import BaseHTTPRequestHandler, HTTPServer
@@ -81,12 +79,12 @@ class APILivros(BaseHTTPRequestHandler):
         else:
             self.send_response(404)
             self.end_headers()
-    
-    def run(port=8000):
-        server_address = ('', port)
-        httpd = HTTPServer(server_address, APILivros)
-        print(f'Servidor rodando na porta {port}...')
-        httpd.serve_forever()
+
+def run(port=8000):
+    server_address = ('', port)
+    httpd = HTTPServer(server_address, APILivros)
+    print(f'Servidor rodando na porta {port}...')
+    httpd.serve_forever()
 
 if __name__ == '__main__':
     run()
