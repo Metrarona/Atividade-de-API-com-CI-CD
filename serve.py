@@ -4,7 +4,7 @@ livros = [
     {"id": 3, "title": "Dom Casmurro", "author": "Machado de Assis"}
 ]
 
-from http import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 class APILivros(BaseHTTPRequestHandler):
